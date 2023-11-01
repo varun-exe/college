@@ -1,36 +1,29 @@
-import math
+class employee:
+    def __init__(self,name,id,dept,salary):
+        self.name=name
+        self.id=id
+        self.dept=dept
+        self.salary=salary
 
-class Shape:
-    def __init__(self):
-        self.name = ''
-        self.area = 0
+    def update(self,dept,income):
+        if self.dept==dept:
+            self.salary+=income
 
-class Circle(Shape):
-    def __init__(self, radius):
-        self.radius = radius
-        self.name = "circle"
+emp=[]
+n=int(input("enter number of employees: "))
+for i in range(n):
+    name=input(f"name of employee{i + 1}")
+    id=int(input(f"id of employee{i + 1}"))
+    dept = input(f"dept of employee{i + 1}")
+    salary = float(input(f"salary of employee{i + 1}"))
+    emp.append(employee(name, id, dept, salary))
 
-    def calarea(self):
-        self.area = math.pi * self.radius * self.radius
-        print(f"Area is {self.area}")
+for i in emp:
+    print(f"name:{i.name} id:{i.id} dept:{i.dept} salary:{i.salary}")
 
-class Triangle(Shape):
-    def __init__(self, height, base):
-        self.height = height
-        self.base = base
-        self.name = "triangle"
-
-    def calarea(self):
-        self.area = 0.5 * self.base * self.height
-        print(f"Area is {self.area}")
-
-n1 = float(input("Enter radius: "))
-c = Circle(n1)
-c.calarea()
-
-h = float(input("Enter height: "))
-b = float(input("Enter base: "))
-
-t = Triangle(h, b)
-t.calarea()
-
+income=int(input("enter salary hike: "))
+dept=input("enter dept: ")
+for i in emp:
+    {i.update(dept,income)}
+for i in emp:
+    print(f"name:{i.name} id:{i.id} dept:{i.dept} salary:{i.salary}")
