@@ -1,0 +1,24 @@
+<html>
+
+<head>
+  <title>Mouse Event</title>
+  <script>
+    function mouseHover(image) {
+      image.src = "https://i1.sndcdn.com/artworks-FACsaO0Yyz3KCTy6-tyEnpg-t500x500.jpg";
+    }
+    function mouseOut(image) {
+      document.getElementById("p2").innerHTML = "Line Replaced";
+      image.src = "https://i.kym-cdn.com/photos/images/newsfeed/001/975/756/46f.jpg";
+      document.getElementById("p1").innerHTML =
+        "This is a text on mouse out Event";
+    }
+  </script>
+</head>
+
+<body>
+  <p id="p2">This line is about to get replaced after mouseOut</p>
+  <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/975/756/46f.jpg" onmouseover="mouseHover(this)" onmouseout="mouseOut(this)" />
+  <p id="p1">("There is no text here")</p>
+</body>
+
+</html>
